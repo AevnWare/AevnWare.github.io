@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eluvium</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #121212;
+            color: #fff;
+            overflow-x: hidden;
+            margin: 0;
+            padding-top: 60px; /* To prevent content from hiding under the fixed nav */
+        }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* Navigation Tabs - Fixed to Top */
+        .nav {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            background: #1c1c1c;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .nav a {
+            color: #fff5a5;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #0099ff;
+        }
+
+        .tab-content {
+            display: none;
+            width: 90%;
+            margin-top: 20px;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .active-tab {
+            display: block;
+        }
+
+        h2 {
+            color: #fff5a5;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #fff5a5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Home Page Styling */
+        .home-content {
+            text-align: center;
+            margin-top: 20px; /* Ensure space from fixed navbar */
+        }
+
+        .home-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .home-content .feature {
+            background: rgba(0, 255, 153, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .home-content .feature h3 {
+            color: #00ff99;
+        }
+
+        /* About Us Page Styling */
+        .about-content {
+            padding: 20px;
+            background: rgba(0, 255, 153, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-content ul {
+            list-style: none;
+        }
+
+        .about-content li {
+            margin: 10px 0;
+        }
+
+        .team-member {
+            padding: 10px;
+            background: #333;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .team-member h3 {
+            color: #fff5a5;
+        }
+
+        .team-member p {
+            color: #ddd;
+        }
+
+        .focus-content {
+            margin-top: 20px;
+            background: rgba(0, 255, 153, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .focus-content h3 {
+            color: #fff5a5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="nav">
+            <a href="#" id="homeTab" onclick="showTab('home')">Home</a>
+            <a href="#" id="discordTab" onclick="showTab('discord')">Discord</a>
+            <a href="#" id="aboutTab" onclick="showTab('about')">About Us</a>
+        </div>
+
+        <!-- Tab Content -->
+
+        <!-- Home Tab -->
+        <div id="home" class="tab-content active-tab home-content">
+            <h2>Welcome to Eluvium</h2>
+            <p>Eluvium is a powerful script that you can run in a Roblox executor. Developed by Echelon, this script allows you to unlock advanced features, bypass anti-cheat systems, and enhance your Roblox experience.</p>
+            <div class="feature">
+                <h3>Free</h3>
+                <p>No tricks this time. Eluvium is completely free to use. No hidden payments or fees—just pure functionality.</p>
+            </div>
+            <div class="feature">
+                <h3>Keys</h3>
+                <p>Getting your hands on the key is simple. Just join our Discord server, and you’ll get the key. No complicated steps or waiting around.</p>
+            </div>
+            <div class="feature">
+                <h3>Undetected</h3>
+                <p>Eluvium is constantly updated to stay undetected by Selected Game's anti-cheat system. While updates may take time, they are always worth it!</p>
+            </div>
+            <div class="feature">
+                <h3>Selected Games</h3>
+                <p>We focus on supporting a select few games to ensure that the script is stable and stays up-to-date with each Roblox update.</p>
+            </div>
+            <div class="feature">
+                <h3>Easy to Use</h3>
+                <p>Running Eluvium is as simple as executing the script in your chosen executor. No complicated setup process—just load and go!</p>
+            </div>
+            <div class="feature">
+                <h3>Regular Updates</h3>
+                <p>While updates may be slower due to the solo development, they are always worth the wait. I am continuously working on improving the script and adding new features.</p>
+            </div>
+        </div>
+
+        <!-- Discord Tab -->
+        <div id="discord" class="tab-content">
+            <h2>Join our Discord</h2>
+            <p>Become part of the Eluvium community! Join our Discord server for the latest updates, access to keys, and to connect with other users and developers.</p>
+            <a href="https://discord.gg/umPbSwgRM5" target="_blank" style="color: #fff5a5; text-decoration: none;">Click here to join the Discord</a>
+        </div>
+
+        <!-- About Us Tab -->
+        <div id="about" class="tab-content about-content">
+            <h2>About Eluvium</h2>
+            <p>Eluvium is a script created and developed by **Echelon**. Currently, this project is being worked on solo, which means updates may be slow at times, but they are always worth it. I take great care in making sure each update is properly tested and improves the script's functionality and undetected status.</p>
+            
+            <!-- Focus Section -->
+            <div class="focus-content">
+                <h3>Prime Focus</h3>
+                <p>My prime focus right now is fixing bugs, ensuring the script stays up-to-date, and making sure it is reliable and perfect. I strive for the best quality possible with every update!</p>
+            </div>
+
+            <!-- Developer List -->
+            <h3>Our Team</h3>
+            <div class="team-member">
+                <h3>Echelon | Founder</h3>
+                <p>Status: Working hard to make Eluvium the best it can be. Updates may take time, but they are worth the wait!</p>
+            </div>
+
+            <!-- Future Plans Section -->
+            <h3>Future Plans</h3>
+            <p>I plan to expand the team with trusted developers who can contribute to making Eluvium even better. I'll also continue to improve the selected games and their sizes to ensure stability and better performance.</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with passion by <a href="#">Echelon</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+
+            // Show the selected tab
+            const selectedTab = document.getElementById(tabName);
+            selectedTab.classList.add('active-tab');
+        }
+    </script>
+</body>
+</html>
