@@ -1,5 +1,5 @@
 --// Loader for Eluvium
---// Discord: Discord.gg/YMqQD4EPYd
+--// Discord: discord.gg/YMqQD4EPYd
 local GameId = game.GameId
 
 
