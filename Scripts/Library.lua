@@ -10,7 +10,7 @@ local CloseBind = Enum.KeyCode.RightControl
 
 local ui = Instance.new("ScreenGui")
 ui.Name = "ui"
-ui.Parent = game.Players.LocalPlayer.PlayerGui
+ui.Parent = game["Run Service"]:IsStudio() and game:GetService("CoreGui") or game.Players.LocalPlayer.PlayerGui
 ui.ResetOnSpawn = false
 ui.IgnoreGuiInset = true
 ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -47,7 +47,7 @@ local function MakeDraggable(topbarobject, object)
 				StartPosition.Y.Scale,
 				StartPosition.Y.Offset + Delta.Y
 			)
-		game.TweenService:Create(object,TweenInfo.new(0.35,Enum.EasingStyle.Elastic),{Position = pos}):Play()
+		game.TweenService:Create(object,TweenInfo.new(0.1),{Position = pos}):Play()
 	end
 
 	topbarobject.InputBegan:Connect(
@@ -318,11 +318,12 @@ function lib:Window(text, preset, closebind)
 		local TabTitle = Instance.new("TextLabel")
 		local TabBtnIndicator = Instance.new("Frame")
 		local TabBtnIndicatorCorner = Instance.new("UICorner")
+		local TabBtnIndicatorCorner1 = Instance.new("UICorner")
 
 		TabBtn.Name = "TabBtn"
 		TabBtn.Parent = TabHold
-		TabBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		TabBtn.BackgroundTransparency = 1.000
+		TabBtn.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+		TabBtn.BackgroundTransparency = 0.500
 		TabBtn.Size = UDim2.new(0, 107, 0, 21)
 		TabBtn.Font = Enum.Font.SourceSans
 		TabBtn.Text = ""
@@ -349,6 +350,8 @@ function lib:Window(text, preset, closebind)
 
 		TabBtnIndicatorCorner.Name = "TabBtnIndicatorCorner"
 		TabBtnIndicatorCorner.Parent = TabBtnIndicator
+		TabBtnIndicatorCorner1.Name = "TabBtnIndicatorCorner"
+		TabBtnIndicatorCorner1.Parent = TabBtn
 
 		coroutine.wrap(
 			function()
