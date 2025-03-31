@@ -10,7 +10,7 @@ local CloseBind = Enum.KeyCode.RightControl
 
 local ui = Instance.new("ScreenGui")
 ui.Name = "ui"
-ui.Parent = game["Run Service"]:IsStudio() and game:GetService("CoreGui") or game.Players.LocalPlayer.PlayerGui
+ui.Parent = game["Run Service"]:IsStudio() == false and game:GetService("CoreGui") or game.Players.LocalPlayer.PlayerGui
 ui.ResetOnSpawn = false
 ui.IgnoreGuiInset = true
 ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
