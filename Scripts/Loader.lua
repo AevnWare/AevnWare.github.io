@@ -1,14 +1,51 @@
---// Loader for Eluvium
---// Discord: discord.gg/YMqQD4EPYd
+--// Eluvium Loader.
+--// Get better at games, I would say -Echelon
+--// Join us: discord.gg/umPbSwgRM5
 
+--// game list, with place id's so we can find stuff. I remade this loader so MANY times.
+local gameList = {
+	[8832438757] = "https://Eluvium-gg.github.io/Scripts/Games/PVP-Sword-Fighting.lua", -- PVP Sword Fighting
+	[189707] = "https://Eluvium-gg.github.io/Scripts/Games/Natural-Disaster-Survival.lua", -- Natural Disaster Survival
+}
 
-local GameId = game.GameId
+--// its in the name dumbfo
+local gameFound = false
 
+--// Just loops, no need to explain honestly
+for placeId, scriptUrl in pairs(gameList) do
+	if game.PlaceId == placeId then
+		local yippee, bruh = pcall(function()
+			loadstring(game:HttpGet(scriptUrl))()
+		end)
 
-if GameId == 3345149486 then
-	-- PVP Sword Fighting
-	loadstring(game:HttpGet("https://Eluvium-gg.github.io/Scripts/Games/PVP-Sword-Fighting.lua"))()
-elseif GameId == 0 then
-	-- hi
-	print("a")
+		if yippee then
+			gameFound = true
+			break
+		else
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Eluvium",
+				Text = "report this to a Dev or Echelon",
+				Duration = 5,
+				Icon = "http://www.roblox.com/asset/?id=13321880274",
+			})
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Eluvium",
+				Text = "I have fallen and cant get back up, Error: " .. bruh,
+				Duration = 15,
+				Icon = "http://www.roblox.com/asset/?id=13321880274",
+			})
+			gameFound = true
+			break
+		end
+	end
+end
+
+--// Notify if no game was found.
+if not gameFound then
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Eluvium",
+		Text = "No supported game found! DM a dev or Echelon if this is a mistake.",
+		Duration = 10,
+		Icon = "http://www.roblox.com/asset/?id=13321880274",
+	})
 end
