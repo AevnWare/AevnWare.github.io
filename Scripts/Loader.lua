@@ -5,6 +5,7 @@
 --// game list, with place id's so we can find stuff. I remade this loader so MANY times.
 local gameList = {
 	[8832438757] = "https://Eluvium-gg.github.io/Scripts/Games/PVP-Sword-Fighting.lua", -- PVP Sword Fighting
+	[9377953133] = "https://Eluvium-gg.github.io/Scripts/Games/PVP-Sword-Fighting.lua", -- Mobile Sword Fight
 	[189707] = "https://Eluvium-gg.github.io/Scripts/Games/Natural-Disaster-Survival.lua", -- Natural Disaster Survival
 }
 
