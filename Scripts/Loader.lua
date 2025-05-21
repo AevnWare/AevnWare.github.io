@@ -11,7 +11,7 @@ local gameList = {
 }
 
 local BetaList = {
-	["Universal"] = "https://AevnWare.github.io/Scripts/Universal.lua", -- This is where like, all the testing features go, This requires manual loading.
+	["Universal"] = "https://AevnWare.github.io/Scripts/Scripts/Universal.lua", -- This is where like, all the testing features go, This requires manual loading.
 	[0] = "https://AevnWare.github.io/Scripts/Games/Mobile-Sword-Fight.lua", -- Im currently working on this, an update will be pushed for this.
 }
 
